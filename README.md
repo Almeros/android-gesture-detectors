@@ -50,3 +50,7 @@ Abstract class that every new gesture detector class should extend.
 
 Abstract class that extends the BaseGestureDetector and that every new gesture 
 detector class for two finger operations should extend.
+
+License
+------------
+This prject is licensed with the 2-clause BSD license.
