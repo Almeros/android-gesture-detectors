@@ -37,6 +37,11 @@ normal or previous finger positions)
 Convenience gesture detector to keep it easy moving an object around with one 
 ore more fingers without losing the clean usage of the gesture detector pattern.
 
+### ShoveGestureDetector
+
+Detects a vertical two-finger shove. (If you place two fingers on screen with less than a 20 degree angle between them,
+this will detact movement on the Y-axis.)
+
 ### ScaleGestureDetector (default Android)
 
 This one is NOT in this framework, but is gesture detector that resides in the 
