@@ -14,6 +14,7 @@ import android.widget.ImageView;
 
 import com.almeros.android.multitouch.gesturedetectors.MoveGestureDetector;
 import com.almeros.android.multitouch.gesturedetectors.RotateGestureDetector;
+import com.almeros.android.multitouch.gesturedetectors.ShoveGestureDetector;
 
 /**
  * Test activity for testing the different GestureDetectors.
@@ -28,11 +29,13 @@ public class TouchActivity extends Activity implements OnTouchListener {
     private float mRotationDegrees = 0.f;
     private float mFocusX = 0.f;
     private float mFocusY = 0.f;  
+    private int mAlpha = 255;
     private int mImageHeight, mImageWidth;
 
     private ScaleGestureDetector mScaleDetector;
     private RotateGestureDetector mRotateDetector;
     private MoveGestureDetector mMoveDetector;
+    private ShoveGestureDetector mShoveDetector;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -56,12 +59,14 @@ public class TouchActivity extends Activity implements OnTouchListener {
 		mScaleDetector = new ScaleGestureDetector(getApplicationContext(), new ScaleListener());
 		mRotateDetector = new RotateGestureDetector(getApplicationContext(), new RotateListener());
 		mMoveDetector = new MoveGestureDetector(getApplicationContext(), new MoveListener());
+		mShoveDetector = new ShoveGestureDetector(getApplicationContext(), new ShoveListener());
 	}
 	
 	public boolean onTouch(View v, MotionEvent event) {
         mScaleDetector.onTouchEvent(event);
         mRotateDetector.onTouchEvent(event);
         mMoveDetector.onTouchEvent(event);
+        mShoveDetector.onTouchEvent(event);
 
         float scaledImageCenterX = (mImageWidth*mScaleFactor)/2;
         float scaledImageCenterY = (mImageHeight*mScaleFactor)/2;
@@ -73,6 +78,7 @@ public class TouchActivity extends Activity implements OnTouchListener {
         
 		ImageView view = (ImageView) v;
 		view.setImageMatrix(mMatrix);
+		view.setAlpha(mAlpha);
 
 		return true; // indicate event was handled
 	}
@@ -109,5 +115,18 @@ public class TouchActivity extends Activity implements OnTouchListener {
 			return true;
 		}
 	}		
+	
+	private class ShoveListener extends ShoveGestureDetector.SimpleOnShoveGestureListener {
+		@Override
+		public boolean onShove(ShoveGestureDetector detector) {
+			mAlpha += detector.getShovePixelsDelta();
+			if (mAlpha > 255)
+				mAlpha = 255;
+			else if (mAlpha < 0)
+				mAlpha = 0;
+			
+			return true;
+		}
+	}	
 
 }
