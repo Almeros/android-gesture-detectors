@@ -2,11 +2,9 @@ package com.almeros.android.multitouch;
 
 import android.app.Activity;
 import android.graphics.Matrix;
-import android.graphics.Point;
 import android.graphics.PointF;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
@@ -41,8 +39,7 @@ import com.almeros.android.multitouch.gesturedetectors.ShoveGestureDetector;
  * OF SUCH DAMAGE.
  */
 public class TouchActivity extends Activity implements OnTouchListener {
-	private static String LOG_TAG = "Touch";
-	
+
 	private Matrix mMatrix = new Matrix();
     private float mScaleFactor = .4f;
     private float mRotationDegrees = 0.f;
