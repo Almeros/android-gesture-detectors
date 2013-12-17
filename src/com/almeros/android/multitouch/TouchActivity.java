@@ -2,10 +2,12 @@ package com.almeros.android.multitouch;
 
 import android.app.Activity;
 import android.graphics.Matrix;
+import android.graphics.Point;
 import android.graphics.PointF;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Display;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
@@ -52,33 +54,44 @@ public class TouchActivity extends Activity implements OnTouchListener {
     private ScaleGestureDetector mScaleDetector;
     private RotateGestureDetector mRotateDetector;
     private MoveGestureDetector mMoveDetector;
-    private ShoveGestureDetector mShoveDetector;
+    private ShoveGestureDetector mShoveDetector; 
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
+		// Determine the center of the screen to center 'earth'
+		Display display = getWindowManager().getDefaultDisplay();
+		mFocusX = display.getWidth()/2f;
+		mFocusY = display.getHeight()/2f;
+		
+		// Set this class as touchListener to the ImageView
 		ImageView view = (ImageView) findViewById(R.id.imageView);
 		view.setOnTouchListener(this);
 		
-		// View is scaled by matrix, so scale initially
-		mMatrix.postScale(mScaleFactor, mScaleFactor);
-		view.setImageMatrix(mMatrix);
-		
-		// Dimensions of image
+		// Determine dimensions of 'earth' image
 		Drawable d 		= this.getResources().getDrawable(R.drawable.earth);
 		mImageHeight 	= d.getIntrinsicHeight();
 		mImageWidth 	= d.getIntrinsicWidth();
-		Log.d(LOG_TAG, "Image dimensions -> height: " + mImageHeight + "px, width: " + mImageWidth + "px");
+
+		// View is scaled and translated by matrix, so scale and translate initially
+        float scaledImageCenterX = (mImageWidth*mScaleFactor)/2; 
+        float scaledImageCenterY = (mImageHeight*mScaleFactor)/2;
+        
+		mMatrix.postScale(mScaleFactor, mScaleFactor);
+		mMatrix.postTranslate(mFocusX - scaledImageCenterX, mFocusY - scaledImageCenterY);
+		view.setImageMatrix(mMatrix);
 
 		// Setup Gesture Detectors
-		mScaleDetector = new ScaleGestureDetector(getApplicationContext(), new ScaleListener());
+		mScaleDetector 	= new ScaleGestureDetector(getApplicationContext(), new ScaleListener());
 		mRotateDetector = new RotateGestureDetector(getApplicationContext(), new RotateListener());
-		mMoveDetector = new MoveGestureDetector(getApplicationContext(), new MoveListener());
-		mShoveDetector = new ShoveGestureDetector(getApplicationContext(), new ShoveListener());
+		mMoveDetector 	= new MoveGestureDetector(getApplicationContext(), new MoveListener());
+		mShoveDetector 	= new ShoveGestureDetector(getApplicationContext(), new ShoveListener());
 	}
 	
+	@SuppressWarnings("deprecation")
 	public boolean onTouch(View v, MotionEvent event) {
         mScaleDetector.onTouchEvent(event);
         mRotateDetector.onTouchEvent(event);
