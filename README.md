@@ -58,4 +58,4 @@ detector class for two finger operations should extend.
 
 License
 ------------
-This prject is licensed with the 2-clause BSD license.
+This project is licensed with the 2-clause BSD license.
