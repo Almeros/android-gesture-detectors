@@ -7,7 +7,7 @@ import android.view.MotionEvent;
  * @author Robert Nordan (robert.nordan@norkart.no)
  * 
  * Copyright (c) 2013, Norkart AS
-
+ *
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
