@@ -1,0 +1,11 @@
+-classpath '/Applications/Android Studio.app/sdk/platforms/android-19/android.jar'
+-d '/Users/rharter/code/android-gesture-detectors/library/build/docs/javadoc'
+-doctitle 'library 0.0.1-SNAPSHOT API'
+-quiet 
+-windowtitle 'library 0.0.1-SNAPSHOT API'
+'/Users/rharter/code/android-gesture-detectors/library/src/main/java/com/almeros/android/multitouch/TouchActivity.java'
+'/Users/rharter/code/android-gesture-detectors/library/src/main/java/com/almeros/android/multitouch/gesturedetectors/BaseGestureDetector.java'
+'/Users/rharter/code/android-gesture-detectors/library/src/main/java/com/almeros/android/multitouch/gesturedetectors/MoveGestureDetector.java'
+'/Users/rharter/code/android-gesture-detectors/library/src/main/java/com/almeros/android/multitouch/gesturedetectors/RotateGestureDetector.java'
+'/Users/rharter/code/android-gesture-detectors/library/src/main/java/com/almeros/android/multitouch/gesturedetectors/ShoveGestureDetector.java'
+'/Users/rharter/code/android-gesture-detectors/library/src/main/java/com/almeros/android/multitouch/gesturedetectors/TwoFingerGestureDetector.java'

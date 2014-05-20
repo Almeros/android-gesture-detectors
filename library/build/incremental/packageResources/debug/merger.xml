@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/Users/rharter/code/android-gesture-detectors/library/src/main/res" >
+            <file
+                name="basketball"
+                path="/Users/rharter/code/android-gesture-detectors/library/src/main/res/drawable/basketball.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="earth"
+                path="/Users/rharter/code/android-gesture-detectors/library/src/main/res/drawable/earth.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="stars"
+                path="/Users/rharter/code/android-gesture-detectors/library/src/main/res/drawable/stars.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="main"
+                path="/Users/rharter/code/android-gesture-detectors/library/src/main/res/layout/main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="/Users/rharter/code/android-gesture-detectors/library/src/main/res/values/strings.xml"
+                qualifiers="" >
+                <string name="app_name" >Android Multi Touch
+                </string>
+            </file>
+        </source>
+        <source path="/Users/rharter/code/android-gesture-detectors/library/build/res/rs/debug" />
+        <source path="/Users/rharter/code/android-gesture-detectors/library/build/res/generated/debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/rharter/code/android-gesture-detectors/library/src/debug/res" />
+    </dataSet>
+
+</merger>
