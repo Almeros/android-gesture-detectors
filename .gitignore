@@ -1,6 +1,9 @@
-/.settings
-/bin
-/gen
-/.classpath
-/.project
+.settings
+bin
+gen
+.classpath
+.project
+.gradle
+.idea
+*.iml
 /MetaDataAlmeros.txt
