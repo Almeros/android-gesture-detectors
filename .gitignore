@@ -1,6 +1,6 @@
-/.settings
-/bin
-/gen
-/.classpath
-/.project
-/MetaDataAlmeros.txt
+.gradle
+/local.properties
+/.idea
+*.iml
+.DS_Store
+build

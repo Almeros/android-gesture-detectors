@@ -1,28 +1,28 @@
-<?xml version="1.1" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
-  <info organisation="com.ryanharter.android-gesture-detectors" module="library" revision="0.0.1-SNAPSHOT" status="integration" publication="20140520160128">
+  <info organisation="android-gesture-detectors" module="library" revision="unspecified" status="integration" publication="20140812102950">
     <description/>
   </info>
   <configurations>
-    <conf name="_debugCompile" visibility="public" description="## Internal use, do not manually configure ##" extends="compile,debugCompile,debugProvided,provided"/>
-    <conf name="_debugPublish" visibility="public" description="## Internal use, do not manually configure ##" extends="compile,debugCompile,debugPublish,publish"/>
-    <conf name="_debugTestCompile" visibility="public" description="## Internal use, do not manually configure ##" extends="_debugCompile,androidTestCompile,androidTestProvided"/>
-    <conf name="_debugTestPublish" visibility="public" description="## Internal use, do not manually configure ##" extends="_debugCompile,_debugPublish,androidTestCompile,androidTestPublish"/>
-    <conf name="_releaseCompile" visibility="public" description="## Internal use, do not manually configure ##" extends="compile,provided,releaseCompile,releaseProvided"/>
-    <conf name="_releasePublish" visibility="public" description="## Internal use, do not manually configure ##" extends="compile,publish,releaseCompile,releasePublish"/>
+    <conf name="_debugCompile" visibility="private" description="## Internal use, do not manually configure ##" extends="compile,debugCompile,debugProvided,provided"/>
+    <conf name="_debugPublish" visibility="private" description="## Internal use, do not manually configure ##" extends="compile,debugCompile,debugPublish,publish"/>
+    <conf name="_debugTestCompile" visibility="private" description="## Internal use, do not manually configure ##" extends="_debugCompile,androidTestCompile,androidTestProvided"/>
+    <conf name="_debugTestPublish" visibility="private" description="## Internal use, do not manually configure ##" extends="_debugCompile,_debugPublish,androidTestCompile,androidTestPublish"/>
+    <conf name="_releaseCompile" visibility="private" description="## Internal use, do not manually configure ##" extends="compile,provided,releaseCompile,releaseProvided"/>
+    <conf name="_releasePublish" visibility="private" description="## Internal use, do not manually configure ##" extends="compile,publish,releaseCompile,releasePublish"/>
+    <conf name="androidJacocoAgent" visibility="private" description="The Jacoco agent to use to get coverage data."/>
+    <conf name="androidJacocoAnt" visibility="private" description="The Jacoco ant tasks to use to get execute Gradle tasks."/>
     <conf name="androidTestCompile" visibility="private" description="Classpath for compiling the androidTest sources."/>
     <conf name="androidTestProvided" visibility="private" description="Classpath for only compiling the androidTest sources."/>
     <conf name="androidTestPublish" visibility="private" description="Classpath only used for publishing."/>
     <conf name="archives" visibility="public" description="Configuration for archive artifacts."/>
     <conf name="compile" visibility="private" description="Classpath for compiling the main sources."/>
-    <conf name="debug" visibility="public" description="Published Configuration for Variant debug" extends="compile,debugCompile,debugPublish,publish"/>
     <conf name="debugCompile" visibility="private" description="Classpath for compiling the debug sources."/>
     <conf name="debugProvided" visibility="private" description="Classpath for only compiling the debug sources."/>
     <conf name="debugPublish" visibility="private" description="Classpath only used for publishing."/>
     <conf name="default" visibility="public" description="Configuration for default artifacts." extends="_releasePublish"/>
     <conf name="provided" visibility="private" description="Classpath for only compiling the main sources."/>
     <conf name="publish" visibility="private" description="Classpath only used for publishing."/>
-    <conf name="release" visibility="public" description="Published Configuration for Variant release" extends="compile,publish,releaseCompile,releasePublish"/>
     <conf name="releaseCompile" visibility="private" description="Classpath for compiling the release sources."/>
     <conf name="releaseProvided" visibility="private" description="Classpath for only compiling the release sources."/>
     <conf name="releasePublish" visibility="private" description="Classpath only used for publishing."/>

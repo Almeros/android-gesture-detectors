@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ryanharter.android-gesture-detectors</groupId>
   <artifactId>library</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <packaging>aar</packaging>
   <name>Android Gesture Detectors Library</name>
   <description>Gesture detector framework for multitouch handling on Android, based on Android's ScaleGestureDetector</description>
