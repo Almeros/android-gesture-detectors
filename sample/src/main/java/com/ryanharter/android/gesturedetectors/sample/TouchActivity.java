@@ -1,4 +1,4 @@
-package com.almeros.android.multitouch;
+package com.ryanharter.android.gesturedetectors.sample;
 
 import android.app.Activity;
 import android.graphics.Matrix;
