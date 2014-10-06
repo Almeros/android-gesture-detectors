@@ -56,6 +56,20 @@ Abstract class that every new gesture detector class should extend.
 Abstract class that extends the BaseGestureDetector and that every new gesture 
 detector class for two finger operations should extend.
 
+# Usage
+
+Gradle
+
+    compile 'com.ryanharter.android-gesture-detectors:library:0.0.2'
+
+Maven
+
+    <dependency>
+        <groupId>com.ryanharter.android-gesture-detectors</groupId>
+        <artifactId>library</artifactId>
+        <version>0.0.2</version>
+    </dependency>
+
 License
 ------------
 This project is licensed with the 2-clause BSD license.
