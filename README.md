@@ -9,6 +9,21 @@ Since I was amazed Android has a ScaleGestureDetector since API level 8 but
 myself. In the process I decided to create a small extendable framework for
 GestureDetectors in general.
 
+Download
+--------
+
+Gradle
+
+    compile 'com.almeros.android-gesture-detectors:library:1.0'
+
+Maven
+
+    <dependency>
+        <groupId>com.almeros.android-gesture-detectors</groupId>
+        <artifactId>library</artifactId>
+        <version>1.0</version>
+    </dependency>
+
 Tutorials
 ---------
 
@@ -55,20 +70,6 @@ Abstract class that every new gesture detector class should extend.
 
 Abstract class that extends the BaseGestureDetector and that every new gesture 
 detector class for two finger operations should extend.
-
-# Usage
-
-Gradle
-
-    compile 'com.ryanharter.android-gesture-detectors:library:0.0.2'
-
-Maven
-
-    <dependency>
-        <groupId>com.ryanharter.android-gesture-detectors</groupId>
-        <artifactId>library</artifactId>
-        <version>0.0.2</version>
-    </dependency>
 
 License
 ------------
