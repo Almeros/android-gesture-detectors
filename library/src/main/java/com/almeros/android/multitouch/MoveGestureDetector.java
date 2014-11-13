@@ -1,8 +1,9 @@
-package com.almeros.android.multitouch.gesturedetectors;
+package com.almeros.android.multitouch;
 
 import android.content.Context;
 import android.graphics.PointF;
 import android.view.MotionEvent;
+import com.almeros.android.multitouch.BaseGestureDetector;
 
 /**
  * @author Almer Thie (code.almeros.com)

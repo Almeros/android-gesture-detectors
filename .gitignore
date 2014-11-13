@@ -1,7 +1,12 @@
+.settings
+bin
+gen
+.classpath
+.project
 .gradle
-/local.properties
-/.idea
+.idea
 *.iml
+gradle/
+build/
 .DS_Store
-build
-gradle
+local.properties

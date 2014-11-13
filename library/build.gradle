@@ -1,31 +1,16 @@
 apply plugin: 'com.android.library'
+
 // TODO Change this back to the main script once the PR is merged.
 apply from: 'https://raw.githubusercontent.com/jpardogo/gradle-mvn-push/master/gradle-mvn-push.gradle'
 
 android {
-    compileSdkVersion 20
-    buildToolsVersion "20.0.0"
+    compileSdkVersion Integer.parseInt(ANDROID_COMPILE_SDK)
+    buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
-        applicationId "com.almeros.android.multitouch"
-        minSdkVersion 15
-        targetSdkVersion 20
-        versionCode 2
-        versionName "1.0"
+        minSdkVersion Integer.parseInt(ANDROID_MIN_SDK)
+        targetSdkVersion Integer.parseInt(ANDROID_TARGET_SDK)
+        versionCode Integer.parseInt(VERSION_CODE)
+        versionName VERSION_NAME
     }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
-    }
-    buildTypes {
-        release {
-            runProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-}
-
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
 }

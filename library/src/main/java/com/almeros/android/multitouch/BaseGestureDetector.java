@@ -1,4 +1,4 @@
-package com.almeros.android.multitouch.gesturedetectors;
+package com.almeros.android.multitouch;
 
 import android.content.Context;
 import android.view.MotionEvent;
@@ -81,7 +81,7 @@ public abstract class BaseGestureDetector {
 	 * Called when the current event occurred when a gesture IS in progress. The
 	 * handling in this implementation may set the gesture out of progress (via
 	 * mGestureInProgress).
-	 * @param action
+	 * @param actionCode
 	 * @param event
 	 */
     protected abstract void handleInProgressEvent(int actionCode, MotionEvent event);

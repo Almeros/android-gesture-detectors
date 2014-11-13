@@ -1,4 +1,4 @@
-package com.ryanharter.android.gesturedetectors.sample;
+package com.almeros.android.multitouch.sample;
 
 import android.app.Activity;
 import android.graphics.Matrix;
@@ -11,10 +11,9 @@ import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.ImageView;
-
-import com.almeros.android.multitouch.gesturedetectors.MoveGestureDetector;
-import com.almeros.android.multitouch.gesturedetectors.RotateGestureDetector;
-import com.almeros.android.multitouch.gesturedetectors.ShoveGestureDetector;
+import com.almeros.android.multitouch.MoveGestureDetector;
+import com.almeros.android.multitouch.RotateGestureDetector;
+import com.almeros.android.multitouch.ShoveGestureDetector;
 
 /**
  * Test activity for testing the different GestureDetectors.

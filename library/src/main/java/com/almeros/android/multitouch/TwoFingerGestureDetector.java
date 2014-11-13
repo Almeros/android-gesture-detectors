@@ -1,4 +1,4 @@
-package com.almeros.android.multitouch.gesturedetectors;
+package com.almeros.android.multitouch;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
