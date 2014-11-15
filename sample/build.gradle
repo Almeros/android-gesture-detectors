@@ -1,13 +1,6 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:0.9.+'
-    }
-}
-
-apply plugin: 'android'
+apply plugin: 'com.android.application'
+// TODO Change this back to the main script once the PR is merged.
+apply from: 'https://raw.githubusercontent.com/jpardogo/gradle-mvn-push/master/gradle-mvn-push.gradle'
 
 android {
     compileSdkVersion Integer.parseInt(ANDROID_COMPILE_SDK)

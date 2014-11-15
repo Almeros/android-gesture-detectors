@@ -6,4 +6,7 @@ gen
 .gradle
 .idea
 *.iml
-/MetaDataAlmeros.txt
+gradle/
+build/
+.DS_Store
+local.properties
