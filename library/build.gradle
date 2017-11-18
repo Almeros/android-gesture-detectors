@@ -13,4 +13,9 @@ android {
         versionCode Integer.parseInt(VERSION_CODE)
         versionName VERSION_NAME
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
 }
