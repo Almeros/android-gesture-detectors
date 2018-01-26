@@ -102,6 +102,15 @@ public class MoveGestureDetector extends BaseGestureDetector {
                 break;
 
             case MotionEvent.ACTION_MOVE:
+                //updateStateByEvent looks for information within mPrevEvent
+                //However, if the gesture started before the detector was attached,
+                //ACTION_MOVE happens but mPrevEvent is null, and code will crash
+                // @BaseGestureDetector.updateStateByEvent() line 102.
+                //This check will simply ignore the current movement if it didn't track it from
+                // the start.
+                if (mPrevEvent == null) {
+                    return;
+                }
                 updateStateByEvent(event);
 
 				// Only accept the event if our relative pressure is within
