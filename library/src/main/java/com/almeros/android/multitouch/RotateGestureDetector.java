@@ -60,6 +60,8 @@ public class RotateGestureDetector extends TwoFingerGestureDetector {
     
     private final OnRotateGestureListener mListener;
     private boolean mSloppyGesture;
+    private float mFocusX;
+    private float mFocusY;
 
     public RotateGestureDetector(Context context, OnRotateGestureListener listener) {
     	super(context);
@@ -156,9 +158,8 @@ public class RotateGestureDetector extends TwoFingerGestureDetector {
         mSloppyGesture = false;
     }
 
-    private float mFocusX;
-    private float mFocusY;
     /**
+     * Get gesture focus X point.
      */
     public float getFocusX() {
         return mFocusX;
@@ -166,6 +167,7 @@ public class RotateGestureDetector extends TwoFingerGestureDetector {
 
 
     /**
+     * Get gesture focus Y point.
      */
     public float getFocusY() {
         return mFocusY;
