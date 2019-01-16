@@ -1,5 +1,0 @@
-container:
-  image: cirrusci/android-sdk:28
-
-check_android_task:
-  check_script: ./gradlew build
