@@ -146,11 +146,7 @@ public abstract class TwoFingerGestureDetector extends BaseGestureDetector {
      * @return
      */
     protected static float getRawX(MotionEvent event, int pointerIndex) {
-        float offset = event.getX() - event.getRawX();
-        if(pointerIndex < event.getPointerCount()){
-        	return event.getX(pointerIndex) + offset;
-        } 
-        return 0f;
+        return event.getRawX();
     }
 
     /**
@@ -160,11 +156,7 @@ public abstract class TwoFingerGestureDetector extends BaseGestureDetector {
      * @return
      */
     protected static float getRawY(MotionEvent event, int pointerIndex) {
-        float offset = event.getY() - event.getRawY();
-        if(pointerIndex < event.getPointerCount()){
-        	return event.getY(pointerIndex) + offset;
-        } 
-        return 0f;
+        return event.getRawY();
     }
 
 	/**
