@@ -2,7 +2,6 @@ package com.almeros.android.multitouch;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
-import android.util.FloatMath;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 
@@ -36,10 +35,12 @@ public abstract class TwoFingerGestureDetector extends BaseGestureDetector {
 	protected float mPrevFingerDiffY;
 	protected float mCurrFingerDiffX;
 	protected float mCurrFingerDiffY;
-    
+    protected float mFocusX;
+    protected float mFocusY;
+
     private float mCurrLen;
     private float mPrevLen;
-	
+
     public TwoFingerGestureDetector(Context context) {
     	super(context);
     	
@@ -92,7 +93,7 @@ public abstract class TwoFingerGestureDetector extends BaseGestureDetector {
         if (mCurrLen == -1) {
             final float cvx = mCurrFingerDiffX;
             final float cvy = mCurrFingerDiffY;
-            mCurrLen = FloatMath.sqrt(cvx*cvx + cvy*cvy);
+            mCurrLen = (float) Math.sqrt(cvx*cvx + cvy*cvy);
         }
         return mCurrLen;
     }
@@ -107,11 +108,37 @@ public abstract class TwoFingerGestureDetector extends BaseGestureDetector {
         if (mPrevLen == -1) {
             final float pvx = mPrevFingerDiffX;
             final float pvy = mPrevFingerDiffY;
-            mPrevLen = FloatMath.sqrt(pvx*pvx + pvy*pvy);
+            mPrevLen = (float) Math.sqrt(pvx*pvx + pvy*pvy);
         }
         return mPrevLen;
     }
-    
+
+    /**
+     * Get gesture focus X point.
+     * @return focus X point of gesture.
+     */
+    public float getFocusX() {
+        return mFocusX;
+    }
+
+
+    /**
+     * Get gesture focus Y point.
+     * @return focus Y point of gesture.
+     */
+    public float getFocusY() {
+        return mFocusY;
+    }
+
+    /**
+     * Calculate focus point for gesture.
+     * @param curr current motion event used to calculate focus point.
+     */
+    protected void determineFocusPoint(MotionEvent curr) {
+        mFocusX = (curr.getX(0) + curr.getX(1)) * 0.5f;
+        mFocusY = (curr.getY(0) + curr.getY(1)) * 0.5f;
+    }
+
     /**
      * MotionEvent has no getRawX(int) method; simulate it pending future API approval. 
      * @param event
@@ -119,11 +146,7 @@ public abstract class TwoFingerGestureDetector extends BaseGestureDetector {
      * @return
      */
     protected static float getRawX(MotionEvent event, int pointerIndex) {
-        float offset = event.getX() - event.getRawX();
-        if(pointerIndex < event.getPointerCount()){
-        	return event.getX(pointerIndex) + offset;
-        } 
-        return 0f;
+        return event.getRawX();
     }
 
     /**
@@ -133,11 +156,7 @@ public abstract class TwoFingerGestureDetector extends BaseGestureDetector {
      * @return
      */
     protected static float getRawY(MotionEvent event, int pointerIndex) {
-        float offset = event.getY() - event.getRawY();
-        if(pointerIndex < event.getPointerCount()){
-        	return event.getY(pointerIndex) + offset;
-        } 
-        return 0f;
+        return event.getRawY();
     }
 
 	/**

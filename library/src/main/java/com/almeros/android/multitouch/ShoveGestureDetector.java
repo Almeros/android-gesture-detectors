@@ -143,6 +143,7 @@ public class ShoveGestureDetector extends TwoFingerGestureDetector {
 				// finger is lifted. Also check that shove is meaningful.
                 if (mCurrPressure / mPrevPressure > PRESSURE_THRESHOLD
                 		&& Math.abs(getShovePixelsDelta()) > 0.5f) {
+                    determineFocusPoint(event);
                     final boolean updatePrevious = mListener.onShove(this);
                     if (updatePrevious) {
                         mPrevEvent.recycle();
