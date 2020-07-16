@@ -139,6 +139,7 @@ public class RotateGestureDetector extends TwoFingerGestureDetector {
 				// a certain limit. This can help filter shaky data as a
 				// finger is lifted.
                 if (mCurrPressure / mPrevPressure > PRESSURE_THRESHOLD) {
+                    determineFocusPoint(event);
                     final boolean updatePrevious = mListener.onRotate(this);
                     if (updatePrevious) {
                         mPrevEvent.recycle();
@@ -154,7 +155,6 @@ public class RotateGestureDetector extends TwoFingerGestureDetector {
         super.resetState();
         mSloppyGesture = false;
     }
-
 
     /**
      * Return the rotation difference from the previous rotate event to the current

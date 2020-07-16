@@ -1,6 +1,8 @@
 Android Gesture Detectors Framework
 ===================================
 
+[![CircleCI](https://circleci.com/gh/mariopce/android-gesture-detectors/tree/master.svg?style=svg)](https://circleci.com/gh/mariopce/android-gesture-detectors/tree/master)
+
 Introduction
 ------------
 
